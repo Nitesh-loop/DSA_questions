@@ -32,7 +32,7 @@ public class LeadersInAnArray {
 			
 			if(arr[i]>largest) {
 				largest = arr[i];
-				//System.out.print(" "+largest);
+				System.out.print(" "+largest);
 				container[j++] = arr[i];
 			}
 		}
