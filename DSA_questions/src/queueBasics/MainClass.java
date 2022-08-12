@@ -4,12 +4,13 @@ public class MainClass {
 	
 	public static void main(String[] args) throws Exception {
 		
-		queueUsingLL qLL = new queueUsingLL();
+//		queueUsingLL qLL = new queueUsingLL();
+		QueueUsingArray qLL = new QueueUsingArray(3);
 		
 		qLL.enqueue(10);
 		qLL.enqueue(20);
 		qLL.enqueue(30);
-		qLL.enqueue(40);
+//		qLL.enqueue(40);
 		
 		System.out.println(qLL.dequeue());
 		System.out.println(qLL.dequeue());
