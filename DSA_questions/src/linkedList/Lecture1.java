@@ -13,6 +13,26 @@ public class Lecture1 {
 
 	}
 	
+	public static Node deleteLL(Node head, int pos) {
+		
+		if(pos == 0) {
+			head = head.next;
+			return head;
+		}
+		
+		if(head == null) {
+			return head;
+		}
+		
+		Node cur = head;
+		for(int i=0; i<pos-1; i++) {
+			cur = cur.next;
+		}
+		cur.next = cur.next.next;
+		
+		return head;
+	}
+	
 	public static Node insertLL(Node head, int data, int pos) {
 		
 		Node newNode = new Node(data);
@@ -34,6 +54,21 @@ public class Lecture1 {
 		
 		
 	}
+	
+	public static int middleNode(Node head) {
+		Node slow = head, fast = head;
+		
+		while(fast!=null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		return slow.data;
+	}
+	
+	public static Node deleteNodeWithoutHead(Node node) {
+		return node;
+	
+	}
 
 	public static void main(String[] args) {
 		
@@ -51,9 +86,14 @@ public class Lecture1 {
 		
 		printLL(head);
 		System.out.println();
-		head = insertLL(head, 100, 3);
-		System.out.println();
-		printLL(head);
+//		head = insertLL(head, 100, 3);
+//		head = deleteLL(head, 0);
+		
+//		System.out.println();
+//		printLL(head);
+		
+		int middleElement = middleNode(head);
+		System.out.println(middleElement);
 
 	}
 
